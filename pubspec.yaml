@@ -1,0 +1,32 @@
+name: teklifimgelsin
+description: "A new Flutter project."
+publish_to: 'none' 
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  dio: ^5.4.1
+  http: ^1.2.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_svg: ^2.0.10+1
+  equatable: ^2.0.5
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
+
+
+  assets:
+    - assets/images/teklifimgelsin.png
