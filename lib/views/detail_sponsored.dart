@@ -1,21 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:teklifimgelsin/controller/search_form_controller.dart';
 import 'package:teklifimgelsin/model/color.dart';
 import 'package:teklifimgelsin/model/loan_offer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class LoanDetailsPopup extends StatelessWidget {
-  final ActiveOffers loanOffer;
+class SponsoredDetailsPopup extends StatelessWidget {
+  final SponsoredOffers sponsoredOffer;
 
-  final TextEditingController amountControllerA;
-  final TextEditingController maturityControllerA;
-
-  const LoanDetailsPopup(
-      {Key? key,
-      required this.loanOffer,
-      required this.amountControllerA,
-      required this.maturityControllerA})
-      : super(key: key);
+  const SponsoredDetailsPopup({
+    Key? key,
+    required this.sponsoredOffer,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +36,7 @@ class LoanDetailsPopup extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              loanOffer.bank ?? '',
+                              sponsoredOffer.bank ?? '',
                               style: const TextStyle(
                                   fontSize: 20.0, fontWeight: FontWeight.bold),
                             ),
@@ -75,23 +69,23 @@ class LoanDetailsPopup extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        //   Text('Faiz oranı: ${loanOffer.interestRate}%'),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(16.0),
+                  //   child: Column(
+                  //     crossAxisAlignment: CrossAxisAlignment.start,
+                  //     children: [
+                  //       //   Text('Faiz oranı: ${loanOffer.interestRate}%'),
 
-                        yazi('Faiz oranı:  ', '${loanOffer.interestRate}%'),
+                  //       yazi('Faiz oranı:  ', '${loanOffer.interestRate}%'),
 
-                        yazi('Yıllık gider oranı: ', '${loanOffer.annualRate}'),
-                        yazi('Kredi tutari: ',
-                            '${formatAmount(amountControllerA.text)} ₺'),
-                        yazi('Vade Sayısı: ',
-                            formatAmount(maturityControllerA.text)),
-                      ],
-                    ),
-                  ),
+                  //       yazi('Yıllık gider oranı: ', '${loanOffer.annualRate}'),
+                  //       yazi('Kredi tutari: ',
+                  //           '${formatAmount(amountControllerA.text)} ₺'),
+                  //       yazi('Vade Sayısı: ',
+                  //           formatAmount(maturityControllerA.text)),
+                  //     ],
+                  //   ),
+                  // ),
                   const SizedBox(height: 100),
                 ],
               ),
@@ -107,7 +101,7 @@ class LoanDetailsPopup extends StatelessWidget {
                     child: ElevatedButton(
                       onPressed: () {
                         //Navigator.of(context).pop();
-                        _launchURL(loanOffer.url!);
+                        _launchURL(sponsoredOffer.adUtmLink!);
                       },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
