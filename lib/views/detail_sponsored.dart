@@ -69,23 +69,22 @@ class SponsoredDetailsPopup extends StatelessWidget {
                       ],
                     ),
                   ),
-                  // Padding(
-                  //   padding: const EdgeInsets.all(16.0),
-                  //   child: Column(
-                  //     crossAxisAlignment: CrossAxisAlignment.start,
-                  //     children: [
-                  //       //   Text('Faiz oranı: ${loanOffer.interestRate}%'),
-
-                  //       yazi('Faiz oranı:  ', '${loanOffer.interestRate}%'),
-
-                  //       yazi('Yıllık gider oranı: ', '${loanOffer.annualRate}'),
-                  //       yazi('Kredi tutari: ',
-                  //           '${formatAmount(amountControllerA.text)} ₺'),
-                  //       yazi('Vade Sayısı: ',
-                  //           formatAmount(maturityControllerA.text)),
-                  //     ],
-                  //   ),
-                  // ),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          '${sponsoredOffer.adHeader}',
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text('${sponsoredOffer.adDetails}%'),
+                      ],
+                    ),
+                  ),
                   const SizedBox(height: 100),
                 ],
               ),
@@ -146,16 +145,4 @@ class SponsoredDetailsPopup extends StatelessWidget {
       throw 'URL açılamadı: $url';
     }
   }
-}
-
-yazi(text, parametre) {
-  return Row(
-    children: [
-      Text(
-        text,
-        style: const TextStyle(fontWeight: FontWeight.bold),
-      ),
-      Text(parametre)
-    ],
-  );
 }

@@ -1,19 +1,6 @@
 import 'dart:math';
 
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-
-deneme({prefix = '', header = '', parameter = '', suffix = ''}) {
-  return Column(
-    children: [
-      Text(header),
-      Text(
-        '$prefix$parameter$suffix',
-        style: const TextStyle(fontWeight: FontWeight.bold),
-      ),
-    ],
-  );
-}
 
 String formatAmount(String amountText) {
   double amount = double.tryParse(amountText) ?? 0.0;
@@ -36,7 +23,7 @@ double calculateMonthlyPayment(
   return monthlyPayment;
 }
 
-double calculatetotalCost(double monthlyPayment, int maturityController) {
+double calculateTotalCost(double monthlyPayment, int maturityController) {
   double totalCost = monthlyPayment * maturityController;
   return totalCost;
 }

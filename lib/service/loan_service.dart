@@ -22,6 +22,7 @@ class LoanService {
         throw Exception('Failed to load loan offers');
       }
     } catch (e) {
+      print(e);
       rethrow;
     }
   }
